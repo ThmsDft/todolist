@@ -1,0 +1,153 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+:root {
+  --bg-color: #0f172a;
+  --main-color: #1e293b;
+  --second-color: rgb(255, 174, 224);
+  --title-color: #ffffff;
+  --text-color: #8c9aaf;
+  --legend-color: #607087;
+  --check-color: lightSkyBlue;
+  --edit-color: greenYellow;
+  --delete-color: red;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: var(--bg-color);
+}
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.App {
+  padding: 10px 20px;
+  margin: 40px;
+  max-width: 500px;
+  width: 100%;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  div.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    svg {
+      width: 40px;
+      height: 40px;
+      fill: var(--second-color);
+    }
+    h1 {
+      color: var(--title-color);
+      font-weight: 900;
+      font-size: 35px;
+    }
+  }
+  form {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    input {
+      padding: 0 10px;
+      flex: 1;
+      height: 30px;
+      border-radius: 5px;
+      border: solid 1px transparent;
+      background-color: var(--bg-color);
+      color: var(--title-color);
+      transition: linear 0.3s;
+      &::placeholder {
+        color: var(--main-color);
+      }
+      &:hover {
+        border: solid 1px var(--second-color);
+      }
+      &:focus {
+        outline: none;
+        border: solid 1px var(--second-color);
+      }
+    }
+    button {
+      cursor: pointer;
+      background: none;
+      border: none;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      right: 5px;
+      svg {
+        fill: var(--second-color);
+        width: 30px;
+        height: 30px;
+        transition: linear 0.3s;
+        &:hover {
+          filter: brightness(0.9);
+        }
+      }
+    }
+  }
+  div.list {
+    padding-inline: 7px;
+    div.item {
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 10px;
+      border-bottom: solid 1px var(--bg-color);
+      transition: linear 0.3s;
+      &:last-child {
+        border-bottom: none;
+      }
+      h2 {
+        color: var(--second-color);
+        transition: linear 0.3s;
+        width: 100%;
+        cursor: pointer;
+      }
+      label {
+        input {
+          display: none;
+        }
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+      span {
+        display: flex;
+        gap: 10px;
+        svg {
+          fill: var(--check-color);
+          transition: linear 0.3s;
+          cursor: pointer;
+        }
+        svg.trash {
+          fill: var(--legend-color);
+          &:hover {
+            fill: var(--delete-color);
+          }
+        }
+        svg.edit {
+          fill: var(--legend-color);
+          &:hover {
+            fill: var(--edit-color);
+          }
+        }
+      }
+    }
+  }
+  p {
+    color: var(--legend-color);
+    font-size: 10px;
+    text-align: center;
+  }
+}
